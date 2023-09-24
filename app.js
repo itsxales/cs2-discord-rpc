@@ -7,8 +7,8 @@ let gsi = new CSGOGSI({
 });
 
 let presence = {
-    details: 'Currently in',
-    state: 'Main Menu',
+    details: 'Waiting for game to start',
+    state: '...',
     largeImageKey: 'csgo',
     largeImageText: 'CS:GO',
     startTimestamp: Date.now(),
@@ -41,8 +41,8 @@ const resetGamePhaseTimer = () => {
     clearTimeout(phaseTimer);
     phaseTimer = setTimeout(() => {
         presence = {
-            details: 'Currently in',
-            state: 'Main Menu',
+            details: 'Waiting for game to start',
+            state: '...',
             largeImageKey: 'csgo',
             largeImageText: 'CS:GO',
             startTimestamp: Date.now(),
