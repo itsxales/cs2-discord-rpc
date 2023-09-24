@@ -1,5 +1,4 @@
 const client = require('discord-rich-presence')('1155259326554980473');
-const fs = require("fs");
 const CSGOGSI = require("./index");
 let gsi = new CSGOGSI({
     port: 3000,
@@ -7,8 +6,7 @@ let gsi = new CSGOGSI({
 });
 
 let presence = {
-    details: 'Waiting for game to start',
-    state: '...',
+    details: 'Waiting for game to start...',
     largeImageKey: 'csgo',
     largeImageText: 'CS:GO',
     startTimestamp: Date.now(),
@@ -41,8 +39,7 @@ const resetGamePhaseTimer = () => {
     clearTimeout(phaseTimer);
     phaseTimer = setTimeout(() => {
         presence = {
-            details: 'Waiting for game to start',
-            state: '...',
+            details: 'Waiting for game to start...',
             largeImageKey: 'csgo',
             largeImageText: 'CS:GO',
             startTimestamp: Date.now(),
@@ -51,7 +48,8 @@ const resetGamePhaseTimer = () => {
     }, 3000);
 };
 
-gsi.on("gamePhase", (phase) => {
-    resetGamePhaseTimer();
+gsi.on("roundPhase", (phase) => {
+    resetGamePhaseTimer()
 });
+
 resetGamePhaseTimer();
