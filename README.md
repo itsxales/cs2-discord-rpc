@@ -13,13 +13,13 @@
     ```
 4. Open CS:GO and enjoy!
 ---
-Used repositories:
+### Used repositories:
 - [discord-rich-presence (NPMJS)](https://www.npmjs.com/package/discord-rich-presence)
 - [discord-rich-presence (GitHub)](https://github.com/devsnek/discord-rich-presence)
 - [node-csgo-gsi (GitHub)](https://github.com/ShaunLWM/node-csgo-gsi)
 
 ---
-All used images are from
+### All used images are from:
 - [Valve Software (Map icons)](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive/Maps)
 - [Valve Software (Main Menu icon)](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive)
 ---
@@ -36,4 +36,4 @@ Hope you enjoy it!
 
 ---
 
-Created with ❤️ by itsxales
+Created with ❤️ by [itsxales](https://github.com/itsxales)
