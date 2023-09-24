@@ -3,15 +3,16 @@
 ---
 ## How to use:
 1. Download the latest release from this repository
-2. Download node modules:
+2. Put [gamestate_integration_dccsrpc.cfg](PUT-THIS-FILE-IN-CSGO-CFG-FOLDER/gamestate_integration_dccsrpc.cfg) to your cfg folder
+3. Download node modules:
     ```shell
     npm install
     ```
-3. Run code:
+4. Run code:
     ```shell
     node app.js
     ```
-4. Open CS:GO and enjoy!
+5. Open CS:GO and enjoy!
 ---
 ### Used repositories:
 - [discord-rich-presence (NPMJS)](https://www.npmjs.com/package/discord-rich-presence)
