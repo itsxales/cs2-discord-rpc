@@ -2,6 +2,7 @@
 
 ---
 ## How to use:
+0. Install latest [Node](https://nodejs.org/) version
 1. Download the latest release from this repository
 2. Put [gamestate_integration_dccsrpc.cfg](PUT-THIS-FILE-IN-CSGO-CFG-FOLDER/gamestate_integration_dccsrpc.cfg) to your cfg folder
 3. Download node modules:
