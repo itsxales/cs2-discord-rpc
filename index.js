@@ -6,15 +6,11 @@ class CSGOGSI extends EventEmitter {
         super();
 
         this.authToken = Array.isArray(authToken) ? authToken : [];
-        this.bombTime = 40;
-        this.isBombPlanted = false;
-        this.bombTimer = null;
-
         this.app = createServer();
         this.app.listen({ port }, () => {
             const addr = this.app.address();
             console.info(
-                `[@] CSGO GSI server listening on ${addr.address}:${addr.port}`
+                `[@] CSGO2 GSI server listening on ${addr.address}:${addr.port}`
             );
         });
     }
