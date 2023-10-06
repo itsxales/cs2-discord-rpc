@@ -1,55 +1,51 @@
-const client = require('discord-rich-presence')('1155259326554980473');
+const client = require("discord-rich-presence")("1155259326554980473");
 const CSGOGSI = require("./index");
-let gsi = new CSGOGSI({
-    port: 3000,
-    authToken: []
-});
 
-let presence = {
-    details: 'Waiting for game to start...',
-    largeImageKey: 'csgo',
-    largeImageText: 'CS:GO',
-    startTimestamp: Date.now(),
-}
-client.updatePresence(presence);
+let gameStateTimer;
+let presence;
 
-gsi.on("gameMap", (map) => {
-    presence = {
-        ...presence,
-        details: 'Playing on ' + map + ` (${gsi.gameMode})`,
-        state: `CT 0 | 0 T`,
-        largeImageKey: map,
-        largeImageText: map,
-    };
-    client.updatePresence(presence);
-});
-
-gsi.on("gamePhase", (phase) => {
-    if (phase === "live") {
+const resetGameStateTimer = () => {
+    clearTimeout(gameStateTimer);
+    gameStateTimer = setTimeout(() => {
         presence = {
-            ...presence,
-            state: `CT ${gsi.ctScore} | ${gsi.tScore} T (${gsi.gameRounds} Round${gsi.gameRounds === 1 ? '' : 's'})`,
-        };
-        client.updatePresence(presence);
-    }
-});
-
-let phaseTimer;
-const resetGamePhaseTimer = () => {
-    clearTimeout(phaseTimer);
-    phaseTimer = setTimeout(() => {
-        presence = {
-            details: 'Waiting for game to start...',
-            largeImageKey: 'csgo',
-            largeImageText: 'CS:GO',
+            details: "Waiting for game to start...",
+            largeImageKey: "csgo",
+            largeImageText: "CS:GO",
             startTimestamp: Date.now(),
-        }
+        };
         client.updatePresence(presence);
     }, 3000);
 };
 
-gsi.on("roundPhase", (phase) => {
-    resetGamePhaseTimer()
-});
+const setMapInfo = (map) => {
+    const gameMap = data["map"]["name"];
+    const gameMode = data["map"]["mode"];
+    const gamePhase = data["map"]["phase"];
+    const gameRounds = data["map"]["round"] || 1;
+    const ctScore = data["map"]["team_ct"]["score"] || 0;
+    const tScore = data["map"]["team_t"]["score"] || 0;
 
-resetGamePhaseTimer();
+    const details = `Playing on ${gameMap} (${gameMode})`;
+    const state =
+        gamePhase == "live"
+            ? `CT ${ctScore} | ${tScore} T (${gameRounds} Round${
+                  gameRounds === 1 ? "" : "s"
+              })`
+            : "CT 0 | 0 T";
+
+    presence = {
+        ...presence,
+        details: details,
+        state: state,
+        largeImageKey: map,
+        largeImageText: map,
+    };
+    client.updatePresence(presence);
+};
+
+client.on("ready", () => {
+    resetGameStateTimer();
+    new CSGOGSI()
+        .on("gameUpdate", (map) => setMapInfo(map))
+        .on("gameState", () => resetGameStateTimer());
+});
