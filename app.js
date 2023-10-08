@@ -18,12 +18,12 @@ const resetGameStateTimer = () => {
 };
 
 const setMapInfo = (map) => {
-    const gameMap = data["map"]["name"];
-    const gameMode = data["map"]["mode"];
-    const gamePhase = data["map"]["phase"];
-    const gameRounds = data["map"]["round"] || 1;
-    const ctScore = data["map"]["team_ct"]["score"] || 0;
-    const tScore = data["map"]["team_t"]["score"] || 0;
+    const gameMap = data["name"];
+    const gameMode = data["mode"];
+    const gamePhase = data["phase"];
+    const gameRounds = data["round"] || 1;
+    const ctScore = data["team_ct"]["score"] || 0;
+    const tScore = data["team_t"]["score"] || 0;
 
     const details = `Playing on ${gameMap} (${gameMode})`;
     const state =
