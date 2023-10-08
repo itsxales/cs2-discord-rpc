@@ -1,4 +1,4 @@
-# Free and open-source Discord Rich Presence for CS:GO
+# Free and open-source Discord Rich Presence for CS2
 
 ---
 ## How to use:
@@ -13,7 +13,7 @@
     ```shell
     node app.js
     ```
-5. Open CS:GO and enjoy!
+5. Open CS2 and enjoy!
 ---
 ### Used repositories:
 - [discord-rich-presence (NPMJS)](https://www.npmjs.com/package/discord-rich-presence)
