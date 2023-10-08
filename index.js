@@ -41,7 +41,6 @@ class CSGOGSI extends EventEmitter {
     processJson(json) {
         const data = JSON.parse(json);
         if (!this.isAuthenticated(data)) return;
-        this.emit("all", data);
         this.process(data);
     }
 
