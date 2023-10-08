@@ -2,11 +2,11 @@ const http = require("http");
 const EventEmitter = require("events");
 
 class CSGOGSI extends EventEmitter {
-    constructor({ port = 3000, authToken = [] }) {
+    constructor(port = 3000, authToken = []) {
         super();
 
         this.authToken = Array.isArray(authToken) ? authToken : [];
-        this.app = createServer();
+        this.app = this.createServer();
         this.app.listen({ port }, () => {
             const addr = this.app.address();
             console.info(

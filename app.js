@@ -43,7 +43,7 @@ const setMapInfo = (map) => {
     client.updatePresence(presence);
 };
 
-client.on("ready", () => {
+client.on("connected", () => {
     resetGameStateTimer();
     new CSGOGSI()
         .on("gameUpdate", (map) => setMapInfo(map))
