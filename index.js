@@ -10,7 +10,7 @@ class CSGOGSI extends EventEmitter {
         this.app.listen({ port }, () => {
             const addr = this.app.address();
             console.info(
-                `[@] CSGO2 GSI server listening on ${addr.address}:${addr.port}`
+                `[@] CS2 GSI server listening on ${addr.address}:${addr.port}`
             );
         });
     }

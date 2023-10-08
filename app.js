@@ -18,27 +18,27 @@ const resetGameStateTimer = () => {
 };
 
 const setMapInfo = (map) => {
-    const gameMap = data["name"];
-    const gameMode = data["mode"];
-    const gamePhase = data["phase"];
-    const gameRounds = data["round"] || 1;
-    const ctScore = data["team_ct"]["score"] || 0;
-    const tScore = data["team_t"]["score"] || 0;
+    const gameMap = map["name"];
+    const gameMode = map["mode"];
+    const gamePhase = map["phase"];
+    const gameRounds = map["round"] || 1;
+    const ctScore = map["team_ct"]["score"] || 0;
+    const tScore = map["team_t"]["score"] || 0;
 
     const details = `Playing on ${gameMap} (${gameMode})`;
     const state =
-        gamePhase == "live"
+        gamePhase === "live"
             ? `CT ${ctScore} | ${tScore} T (${gameRounds} Round${
-                  gameRounds === 1 ? "" : "s"
-              })`
+                gameRounds === 1 ? "" : "s"
+            })`
             : "CT 0 | 0 T";
 
     presence = {
         ...presence,
         details: details,
         state: state,
-        largeImageKey: map,
-        largeImageText: map,
+        largeImageKey: gameMap,
+        largeImageText: gameMap,
     };
     client.updatePresence(presence);
 };
