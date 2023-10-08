@@ -1,19 +1,19 @@
 # Free and open-source Discord Rich Presence for CS2
-
 ---
 ## How to use:
 0. Install latest [Node](https://nodejs.org/) version
 1. Download the latest release from this repository
 2. Put [gamestate_integration_dccsrpc.cfg](PUT-THIS-FILE-IN-CSGO-CFG-FOLDER/gamestate_integration_dccsrpc.cfg) to your game cfg folder
-3. Download node modules:
+    > **Important!** ..\Counter-Strike Global Offensive\game\csgo\cfg , **NOT "csgo" FOLDER!!!**
+4. Download node modules:
     ```shell
     npm install
     ```
-4. Run code:
+5. Run code:
     ```shell
     node app.js
     ```
-5. Open CS2 and enjoy!
+6. Open CS2 and enjoy!
 ---
 ### Used repositories:
 - [discord-rich-presence (NPMJS)](https://www.npmjs.com/package/discord-rich-presence)
