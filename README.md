@@ -4,7 +4,7 @@
 0. Install latest [Node](https://nodejs.org/) version
 1. Download the latest release from this repository
 2. Put [gamestate_integration_dccsrpc.cfg](PUT-THIS-FILE-IN-CSGO-CFG-FOLDER/gamestate_integration_dccsrpc.cfg) to your game cfg folder
-    > **Important!** ..\Counter-Strike Global Offensive\game\csgo\cfg , **NOT "csgo" FOLDER!!!**
+    > **Important!** ..\Counter-Strike Global Offensive\game\csgo\cfg , **NOT "..\Counter-Strike\csgo" FOLDER!!!**
 4. Download node modules:
     ```shell
     npm install
