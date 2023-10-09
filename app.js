@@ -10,7 +10,7 @@ const resetGameStateTimer = () => {
         presence = {
             details: "Waiting for game to start...",
             largeImageKey: "csgo",
-            largeImageText: "CS:GO",
+            largeImageText: "CS2",
             startTimestamp: Date.now(),
         };
         client.updatePresence(presence);
@@ -41,11 +41,11 @@ const setMapInfo = (map) => {
         largeImageText: gameMap,
     };
     client.updatePresence(presence);
+    resetGameStateTimer()
 };
 
 client.on("connected", () => {
     resetGameStateTimer();
     new CSGOGSI()
         .on("gameUpdate", (map) => setMapInfo(map))
-        .on("gameState", () => resetGameStateTimer());
 });

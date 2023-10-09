@@ -1,7 +1,7 @@
 {
   "name": "cs-rpc",
-  "version": "0.0.1",
-  "description": "Discord RPC for CSGO",
+  "version": "0.0.3",
+  "description": "Discord RPC for CS2",
   "main": "index.js",
   "author": "itsxales",
   "license": "ISC",
