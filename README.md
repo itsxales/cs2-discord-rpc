@@ -1,4 +1,4 @@
-# Free and open-source Discord Rich Presence for CS2
+Open-source Discord Rich Presence for CS2
 ---
 ## How to use:
 0. Install latest [Node](https://nodejs.org/) version
