@@ -4,7 +4,9 @@ Open-source Discord Rich Presence for CS2
 0. Install latest [Node](https://nodejs.org/) version
 1. Download the latest release from this repository
 2. Put [gamestate_integration_dccsrpc.cfg](PUT-THIS-FILE-IN-CSGO-CFG-FOLDER/gamestate_integration_dccsrpc.cfg) to your game cfg folder
-    > **Important!** ..\Counter-Strike Global Offensive\game\csgo\cfg , **NOT "..\Counter-Strike Global Offensive\csgo" FOLDER!!!**
+    > **Important!** ..\Counter-Strike Global Offensive\game\csgo\cfg
+    
+    > **NOT "..\Counter-Strike Global Offensive\csgo" FOLDER!!!**
 3. Open CS2RPCv0.0.3.exe
 6. Open CS2 and enjoy!
 ---
